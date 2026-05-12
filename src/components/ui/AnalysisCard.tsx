@@ -9,9 +9,12 @@ import {
     Users,
     TrendingUp,
     Flag,
-ContactIcon
+    ContactIcon
 
 } from "lucide-react";
+import { CounterUp } from "../animations/CounterUp";
+
+
 
 const stats = [
     {
@@ -31,8 +34,6 @@ const stats = [
     {
         title: "Users",
         value: "985",
-        change: "-98.24%",
-        negative: true,
         icon: Users,
         iconBg: "bg-purple-100",
         iconColor: "text-purple-600",
@@ -69,7 +70,7 @@ export default function AnalysisCard() {
                 return (
                     <Card
                         key={index}
-                        className="rounded-3xl w-6xs  bg-white dark:bg-background shadow-sm hover:scale-[1.05] hover:border-primary/30 duration-300"
+                        className="rounded-lg w-6xs  bg-white dark:bg-background shadow-2xs hover:scale-[1.05] hover:border-primary/30 duration-300"
                     >
                         <CardContent className="flex flex-col gap-2">
                             <div className="flex items-center justify-between gap-4">
@@ -78,14 +79,15 @@ export default function AnalysisCard() {
                                         {item.title}
                                     </h3>
                                     <h2 className="text-2xl font-bold ">
-                                        {item.value}
+                                        {/* {item.value} */}
+                                        <CounterUp value={parseInt(item.value)} />
                                     </h2>
                                 </div>
 
                                 <div
-                                    className={`flex p-4 items-center justify-center rounded-2xl ${item.iconBg}`}
+                                    className={`flex p-4 items-center justify-center rounded-2xl bg-sidebar-accent`}
                                 >
-                                    <Icon className={`h-6 w-6 ${item.iconColor}`} />
+                                    <Icon className={`h-6 w-6 text-white `} />
                                 </div>
                             </div>
 

@@ -2,6 +2,11 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+body {
+  font-family: "Oswald", sans-serif;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -46,6 +51,7 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
 }
 
 :root {
@@ -78,11 +84,14 @@
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   /* Side Bar hovers */
-  --sidebar-accent: oklch(83.295% 0.04741 92.421);
+  --sidebar-accent: oklch(72% 0.045 70);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --custom-color: oklch(44.627% 0.27578 272.705);
+  --bg-primary: linear-gradient(to right,
+      #a88b3a,
+      #d8bf6a);
 }
 
 .dark {
@@ -113,7 +122,7 @@
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(74.254% 0.05388 91.417);
+  --sidebar-accent: oklch(72% 0.045 70);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(60.353% 0.24767 29.223);

@@ -19,8 +19,8 @@ export default function DefaultLayout({
                 <SidebarProvider>
 
                     <AppSidebar />
-                    <main className="">
-                        <Navbar />
+                    <main className="md:w-full">
+                        <Navbar  />
                         <div className="container">{children}</div>
                     </main>
                 </SidebarProvider>

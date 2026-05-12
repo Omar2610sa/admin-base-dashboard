@@ -29,7 +29,7 @@ export function NavNotifications({
             <SidebarMenu>
                 {notifications.map((item) => (
                     <SidebarMenuItem>
-                        <SidebarMenuButton is asChild tooltip={item.name}>
+                        <SidebarMenuButton  asChild tooltip={item.name}>
                             <Link to={item.url}>
                                 {item.icon}
                                 <span>{item.name}</span>
