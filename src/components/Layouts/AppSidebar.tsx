@@ -32,7 +32,7 @@ const data = {
 
         {
             title: "Home",
-            url: "#",
+            url: "/",
             icon: (
                 <Home
                 />
@@ -147,7 +147,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarHeader>
 
             {/* Sidebar Content */}
-            <SidebarContent className="scrollbar-thumb-sidebar-accent">
+            <SidebarContent className="scrollbar-thumb-sidebar-accent scrollbar-thin">
                 <NavMain items={data.navMain} />
                 <SidebarSeparator />
                 <NavCommuications commuications={data.commuications} />

@@ -11,6 +11,7 @@ export default function DefaultLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    
     return (
         <TooltipProvider>
 
@@ -20,7 +21,7 @@ export default function DefaultLayout({
                     <AppSidebar />
                     <main className="w-full">
                         <Navbar />
-                        <div className="px-4">{children}</div>
+                        <div className="px-6 py-4 ">{children}</div>
                     </main>
                 </SidebarProvider>
             </ThemeProvider >

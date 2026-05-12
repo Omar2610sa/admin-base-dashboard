@@ -14,13 +14,13 @@ import { ModeToggle } from '../ui/mode-toggle'
 import { Button } from '../ui/button'
 const Navbar = () => {
     return (
-        <nav className='flex p-4 items-center justify-between border border-b'>
+        <nav className='flex py-4 px-6 items-center justify-between border border-b'>
             <div className='flex justify-between items-center gap-5'>
 
-               
+
                 {/* Input serach */}
                 <div className="relative" data-slot="popover-anchor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-search absolute start-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground z-10" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
-                <Input placeholder="Search..." className="flex rounded-md border border-input px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 ps-10 w-64 bg-background/50 h-10" cmdk-input=""    aria-autocomplete="list" role="combobox" aria-expanded="true" aria-controls="radix-«ro»" aria-labelledby="radix-«rp»" id="radix-«rq»" type="text" value="" /></div>
+                    <Input placeholder="Search..." className="flex rounded-md border border-input px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 ps-10 w-64 bg-background/50 h-10" cmdk-input="" aria-autocomplete="list" role="combobox" aria-expanded="true" aria-controls="radix-«ro»" aria-labelledby="radix-«rp»" id="radix-«rq»" type="text" value="" /></div>
                 {/* Dark toggle */}
             </div>
             <div className='flex justify-between items-center gap-5'>
