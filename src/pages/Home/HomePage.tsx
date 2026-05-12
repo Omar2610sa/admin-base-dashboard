@@ -25,7 +25,7 @@ const HomePage = () => {
             <Breadcrumb >
                 <BreadcrumbList>
                     <BreadcrumbItem  className="flex justify-between gap-2 items-center">
-                        <Home className="text-black w-5 h-5" />
+                        <Home className="text-foreground w-5 h-5" />
                         <BreadcrumbPage className="text-lg font-normal" >Home</BreadcrumbPage>
                     </BreadcrumbItem>
                 </BreadcrumbList>

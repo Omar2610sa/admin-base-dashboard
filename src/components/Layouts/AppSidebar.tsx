@@ -20,7 +20,6 @@ import { Home, SparklesIcon, PanelsTopLeftIcon, ContactIcon, FormIcon, Flag, Bui
 import { Link, useLocation } from "react-router-dom"
 
 
-import logo from "@/assets/logo-white.png"
 import { SidebarInset, SidebarTrigger } from '../ui/sidebar'
 
 
@@ -70,10 +69,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
 
     const isActive = (url: string) => {
-  if (!url) return false;
-  if (url === "/") return pathname === "/";
-  return pathname === url;
-};
+        if (!url) return false;
+        if (url === "/") return pathname === "/";
+        return pathname === url;
+    };
     return (
         <Sidebar className="border" collapsible="icon" variant="sidebar" {...props}>
             {/* Sidebar Header */}
@@ -82,8 +81,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <SidebarMenuItem className="flex items-center justify-between gap-5" >
                         <SidebarMenuButton size="lg" asChild className="flex items-center justify-between gap-2 group-data-[collapsible=icon]:hidden">
                             <a href="#">
-                                <div className="flex aspect-square size-8   items-center justify-center rounded-full bg-stone-500 text-sidebar-primary-foreground">
-                                    <img src={logo} alt="logo" className="size-6 object-contain flex justify-start items-center " />
+                                <div className="flex aspect-square size-8   items-center justify-center rounded-full bg-sidebar-accent text-sidebar-primary-foreground">
+                                    SA
                                 </div>
                                 <div className="grid flex-1 text-left text-sm leading-tight">
                                     <span className="truncate font-medium">Eraf Dashboard</span>
