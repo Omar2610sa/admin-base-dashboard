@@ -32,16 +32,15 @@ const data = {
 
         {
             title: "Home",
-            url: "/",
+            url: "/home",
             icon: (
-                <Home
-                />
+                <Home />
             ),
 
         },
         {
             title: "Sections",
-            url: "#",
+            url: "/sections",
             icon: (
                 <PanelsTopLeftIcon
                 />
@@ -50,7 +49,7 @@ const data = {
         },
         {
             title: "Features",
-            url: "#",
+            url: "/features",
             icon: (
                 <SparklesIcon
                 />
@@ -63,7 +62,7 @@ const data = {
     commuications: [
         {
             name: "Contacts",
-            url: "#",
+            url: "/contacts",
             icon: (
                 <ContactIcon
                 />
@@ -71,7 +70,7 @@ const data = {
         },
         {
             name: "Applications",
-            url: "#",
+            url: "/applications",
             icon: (
                 <FormIcon
                 />
@@ -81,7 +80,7 @@ const data = {
     countries: [
         {
             name: "Countries",
-            url: "#",
+            url: "/countries",
             icon: (
                 <Flag
                 />
@@ -89,7 +88,7 @@ const data = {
         },
         {
             name: "Cities",
-            url: "#",
+            url: "/cities",
             icon: (
                 <Building2Icon
                 />
@@ -99,7 +98,7 @@ const data = {
     notifications: [
         {
             name: "Admin Notifications",
-            url: "#",
+            url: "/admin-notifications",
             icon: (
                 <Bell
                 />
@@ -107,7 +106,7 @@ const data = {
         },
         {
             name: "Notifications",
-            url: "#",
+            url: "/notifications",
             icon: (
                 <BellMinus
                 />

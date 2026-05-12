@@ -20,13 +20,13 @@ const HomePage = () => {
 
     // console.log(statistics)
     return (
-        <div className="flex flex-col justify-start gap-6">
+        <div className="flex flex-col gap-6">
             {/* Breadcrump */}
             <Breadcrumb >
                 <BreadcrumbList>
                     <BreadcrumbItem  className="flex justify-between gap-3 items-center">
                         <Home width={24} height={24} />
-                        <BreadcrumbPage className="text-xl">Home</BreadcrumbPage>
+                        <BreadcrumbPage className="text-xl" >Home</BreadcrumbPage>
                     </BreadcrumbItem>
                 </BreadcrumbList>
             </Breadcrumb>

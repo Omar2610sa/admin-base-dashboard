@@ -6,8 +6,9 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 
-    useSidebar,
 } from "@/components/ui/sidebar"
+import { Link } from "react-router-dom"
+
 
 
 
@@ -21,8 +22,6 @@ export function NavCountries({
         icon: React.ReactNode
     }[]
 }) {
-    const { isMobile } = useSidebar()
-
     return (
         <SidebarGroup >
             <SidebarGroupLabel>Countries & Cities</SidebarGroupLabel>
@@ -30,10 +29,10 @@ export function NavCountries({
                 {countries.map((item) => (
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild tooltip={item.name}>
-                            <a href={item.url}>
+                            <Link to={item.url}>
                                 {item.icon}
-                                <span>{item.name}</span>
-                            </a>
+                                <span>{item.name}ee</span>
+                            </Link>
                         </SidebarMenuButton>
 
                     </SidebarMenuItem>

@@ -11,7 +11,7 @@ import {
 
 export default function CardBanner({ title, description }: { title: string, description: string }) {
   return (
-    <Card className="w-full grid grid-cols-2 items-center justify-between  text-white bg-gradient-to-r from-[#ac9259] to-[#d4c48f] py-6  shadow-none">
+    <Card className="w-full grid md:grid-cols-2 items-center justify-between  text-white bg-gradient-to-r from-[#ac9259] to-[#d4c48f] py-6  shadow-none">
 
       <CardHeader className="px-8 flex flex-col items-start gap-3" >
         <CardTitle className="mb-2 font-medium text-3xl tracking-tight">

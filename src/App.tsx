@@ -7,8 +7,8 @@ function App() {
 
   return (
     <>
-      <DefaultLayout >
-        {/* <RoutePaths /> */}
+      <DefaultLayout>
+        <RoutePaths />
       </DefaultLayout>
     </>
   )

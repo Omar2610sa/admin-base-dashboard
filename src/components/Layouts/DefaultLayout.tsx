@@ -19,9 +19,9 @@ export default function DefaultLayout({
                 <SidebarProvider>
 
                     <AppSidebar />
-                    <main className="w-full">
+                    <main className="">
                         <Navbar />
-                        <div className="px-6 py-4 ">{children}</div>
+                        <div className="container">{children}</div>
                     </main>
                 </SidebarProvider>
             </ThemeProvider >

@@ -134,3 +134,24 @@
     @apply font-sans;
   }
 }
+
+
+
+
+@utility container {
+  margin-inline: auto;
+  padding: 28px 24px;
+  max-width: 100%;
+
+  @media (min-width: 992px) {
+    max-width: 962px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1200px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1400px;
+  }
+}

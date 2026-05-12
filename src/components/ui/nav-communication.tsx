@@ -6,8 +6,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 
-  useSidebar,
 } from "@/components/ui/sidebar"
+import { Link } from "react-router-dom"
 
 
 
@@ -21,8 +21,6 @@ export function NavCommuications({
     icon: React.ReactNode
   }[]
 }) {
-  const { isMobile } = useSidebar()
-
   return (
     <SidebarGroup >
       <SidebarGroupLabel>Commuinciatins</SidebarGroupLabel>
@@ -30,10 +28,10 @@ export function NavCommuications({
         {commuications.map((item) => (
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={item.name}>
-                <a href={item.url}>
+                <Link to={item.url}>
                   {item.icon}
                   <span>{item.name}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
 
             </SidebarMenuItem>

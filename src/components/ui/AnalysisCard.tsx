@@ -15,21 +15,21 @@ ContactIcon
 
 const stats = [
     {
-        title: "Total Sections",
+        title: "Sections",
         value: "11",
         icon: PanelsTopLeftIcon,
         iconBg: "bg-red-100",
         iconColor: "text-red-600",
     },
     {
-        title: "Total Features",
+        title: "Features",
         value: "35",
         icon: SparklesIcon,
         iconBg: "bg-green-100",
         iconColor: "text-green-600",
     },
     {
-        title: "Total Users",
+        title: "Users",
         value: "985",
         change: "-98.24%",
         negative: true,
@@ -45,14 +45,14 @@ const stats = [
         iconColor: "text-orange-600",
     },
     {
-        title: "Total Contacts",
+        title: "Contacts",
         value: "69",
         icon: ContactIcon,
         iconBg: "bg-blue-100",
         iconColor: "text-blue-600",
     },
     {
-        title: "Total Countries",
+        title: "Countries",
         value: "69",
         icon: Flag,
         iconBg: "bg-yellow-100",
@@ -62,17 +62,17 @@ const stats = [
 
 export default function AnalysisCard() {
     return (
-        <div className="grid gap-6 md:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-4">
             {stats.map((item, index) => {
                 const Icon = item.icon;
 
                 return (
                     <Card
                         key={index}
-                        className="rounded-3xl w-2xs  bg-white dark:bg-background shadow-sm hover:scale-[1.05] hover:border-primary/30 duration-300"
+                        className="rounded-3xl w-6xs  bg-white dark:bg-background shadow-sm hover:scale-[1.05] hover:border-primary/30 duration-300"
                     >
                         <CardContent className="flex flex-col gap-2">
-                            <div className="flex items-center justify-between">
+                            <div className="flex items-center justify-between gap-4">
                                 <div className="flex flex-col items-start justify-start gap-3">
                                     <h3 className="text-[18px] font-medium text-black dark:text-foreground">
                                         {item.title}
