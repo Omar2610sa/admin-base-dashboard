@@ -53,11 +53,11 @@ export const columns: ColumnDef<AppTable>[] = [
             const status = row.getValue("status");
 
             return (
-                <div
+                <div 
                     className={cn(
                         `p-1 rounded-md w-max text-xs`,
                         status === "active" && "bg-green-500/40",
-                        status === "desactive" && "bg-red-500/40"
+                        status === "desactive" && "bg-red-200 text-red-500"
                     )}
                 >
                     {status as string}
@@ -67,7 +67,7 @@ export const columns: ColumnDef<AppTable>[] = [
     },
     {
         id: "actions",
-        header: "actions",
+        header: "Actions",
         cell: ({ row }) => {
             const payment = row.original
 
@@ -84,7 +84,7 @@ export const columns: ColumnDef<AppTable>[] = [
                         <DropdownMenuSeparator />
                         <DropdownMenuItem className="justify-center">Edit</DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem vari className=" p-1 justify-center"
+                        <DropdownMenuItem variant="destructive" className=" p-1 justify-center"
                             onClick={() => navigator.clipboard.writeText(payment.id.toString())}
                         >
                             Delete

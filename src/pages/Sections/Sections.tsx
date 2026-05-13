@@ -10,19 +10,19 @@ import {
 import { Home, PanelsTopLeftIcon } from "lucide-react"
 const Sections = () => {
     return (
-        <div className='flex flex-col gap-6'>
+        <div className='flex flex-col '>
             {/* Breadcrump */}
             <Breadcrumb>
                 <BreadcrumbList>
                     <BreadcrumbItem  className="flex justify-between gap-2 items-center">
                         <Home className="text-foreground w-5 h-5" />
         
-                        <BreadcrumbLink className="text-lg text-foreground font-normal" href="/">Home</BreadcrumbLink>
+                        <BreadcrumbLink className="text-lg text-foreground font-light" href="/">Home</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem className="flex justify-between gap-2 items-center">
                     <PanelsTopLeftIcon className=" w-5 h-5 text-foreground" />
-                        <BreadcrumbPage className="text-lg text-foreground font-semibold ">Sections</BreadcrumbPage>
+                        <BreadcrumbPage className="text-lg text-foreground font-medium ">Sections</BreadcrumbPage>
                     </BreadcrumbItem>
                 </BreadcrumbList>
             </Breadcrumb>

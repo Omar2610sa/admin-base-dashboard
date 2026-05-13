@@ -149,7 +149,7 @@ body {
 
 @utility container {
   margin-inline: auto;
-  padding: 28px 24px;
+  padding: 16px 24px;
   max-width: 100%;
 
   @media (min-width: 992px) {

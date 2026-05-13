@@ -80,15 +80,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarMenu>
                     <SidebarMenuItem className="flex items-center justify-between gap-5" >
                         <SidebarMenuButton size="lg" asChild className="flex items-center justify-between gap-2 group-data-[collapsible=icon]:hidden">
-                            <a href="#">
+                            <Link to="/">
                                 <div className="flex aspect-square size-8   items-center justify-center rounded-full bg-sidebar-accent text-sidebar-primary-foreground">
                                     SA
                                 </div>
                                 <div className="grid flex-1 text-left text-sm leading-tight">
-                                    <span className="truncate font-medium">Eraf Dashboard</span>
+                                    <span className="truncate font-medium">Dashboard</span>
                                     <span className="truncate text-xs">Super Admin</span>
                                 </div>
-                            </a>
+                            </Link>
                         </SidebarMenuButton>
 
                         {/* Collabsed */}

@@ -24,6 +24,7 @@ import {
 import { DataTablePagination } from "@/components/TablePagination"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
+import { SearchXIcon } from "lucide-react"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -67,12 +68,12 @@ export function DataTable<TData, TValue>({
                     onChange={(event) =>
                         table.getColumn("title")?.setFilterValue(event.target.value)
                     }
-                    className="max-w-3xs p-3 focus-visible:ring-sidebar-accent"
+                    className="max-w-3xs p-3 focus-visible:ring-sidebar-accent shadow-2xl"
                 />
             </div>
             <div className="overflow-hidden rounded-md border">
 
-                <Table>
+                <Table className="">
                     <TableHeader>
                         {table.getHeaderGroups().map((headerGroup) => (
                             <TableRow key={headerGroup.id}>
@@ -108,7 +109,7 @@ export function DataTable<TData, TValue>({
                         ) : (
                             <TableRow>
                                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                                    No results.
+                                    <SearchXIcon className="mx-auto h-20 w-20 my-20" />
                                 </TableCell>
                             </TableRow>
                         )}
