@@ -1,4 +1,5 @@
 import CardBanner from "@/components/card-04"
+import Tablist from "@/components/Tablist"
 import AnalysisCard from "@/components/ui/AnalysisCard"
 import {
     Breadcrumb,
@@ -25,7 +26,7 @@ const HomePage = () => {
             {/* Breadcrump */}
             <Breadcrumb >
                 <BreadcrumbList>
-                    <BreadcrumbItem  className="flex justify-between gap-2 items-center">
+                    <BreadcrumbItem className="flex justify-between gap-2 items-center">
                         <Home className="text-foreground w-5 h-5" />
                         <BreadcrumbPage className="text-lg font-normal" >Home</BreadcrumbPage>
                     </BreadcrumbItem>
@@ -34,9 +35,14 @@ const HomePage = () => {
 
             {/* Welcome Back card */}
             <CardBanner title="Welcome Back" description="Here's what's happening with your Website today." />
+
+            {/* Tablist */}
+            <Tablist />
+
             {/* Cards */}
 
             <AnalysisCard />
+
         </div>
     )
 }

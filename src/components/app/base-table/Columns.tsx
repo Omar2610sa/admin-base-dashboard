@@ -18,6 +18,7 @@ import {
 
 import { ArrowUpDown } from "lucide-react"
 import ActiveSwitcher from "@/components/ActiveSwitcher"
+import ShowDialog from "@/components/ShowDialog"
 
 export type AppTable = {
     id: number,
@@ -46,6 +47,14 @@ export const columns: ColumnDef<AppTable>[] = [
     {
         accessorKey: "description",
         header: "Description",
+        cell: ({ row }) => {
+            const title = row.getValue<string>("description")
+            return (
+                <>
+                <ShowDialog title={title} />
+                </>
+            )
+        }
     },
     {
         accessorKey: "status",
@@ -64,7 +73,7 @@ export const columns: ColumnDef<AppTable>[] = [
                 //     {status as string}
                 // </div>
                 <>
-                <ActiveSwitcher />
+                    <ActiveSwitcher />
                 </>
             );
         },

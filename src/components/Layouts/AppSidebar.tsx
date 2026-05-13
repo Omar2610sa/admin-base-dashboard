@@ -74,7 +74,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         return pathname === url;
     };
     return (
-        <Sidebar className="border" collapsible="icon" variant="sidebar" {...props}>
+        <Sidebar className="border" collapsible="icon" variant="sidebar"  {...props}>
             {/* Sidebar Header */}
             <SidebarHeader>
                 <SidebarMenu>
