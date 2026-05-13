@@ -30,12 +30,13 @@ const Navbar = () => {
 
                 {/* Languages */}
                 <Button size="lg" variant="ghost">
-                    <Globe className="size-4" />
+                    <Globe className="size-5" />
                 </Button>
 
                 {/* Notifiactions */}
-                <Button size="lg" variant="ghost">
-                    <Bell className="size-4" />
+                <Button size="lg" variant="ghost" className='relative'>
+                    <Bell className="size-5 " />
+                    <span className="absolute -top-1 right-1  flex h-4 w-4 items-center justify-center rounded-full bg-sidebar-accent text-[8px] font-black text-slate-100 ring-2 ring-background ring-offset-0 transition-all animate-bounce-subtle">3</span>
                 </Button>
 
 

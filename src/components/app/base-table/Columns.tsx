@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 import { ArrowUpDown } from "lucide-react"
+import ActiveSwitcher from "@/components/ActiveSwitcher"
 
 export type AppTable = {
     id: number,
@@ -53,15 +54,18 @@ export const columns: ColumnDef<AppTable>[] = [
             const status = row.getValue("status");
 
             return (
-                <div 
-                    className={cn(
-                        `p-1 rounded-md w-max text-xs`,
-                        status === "active" && "bg-green-500/40",
-                        status === "desactive" && "bg-red-200 text-red-500"
-                    )}
-                >
-                    {status as string}
-                </div>
+                // <div 
+                //     className={cn(
+                //         `p-1 rounded-md w-max text-xs`,
+                //         status === "active" && "bg-green-500/40",
+                //         status === "desactive" && "bg-red-200 text-red-500"
+                //     )}
+                // >
+                //     {status as string}
+                // </div>
+                <>
+                <ActiveSwitcher />
+                </>
             );
         },
     },

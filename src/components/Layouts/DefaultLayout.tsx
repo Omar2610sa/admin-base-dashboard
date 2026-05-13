@@ -1,3 +1,4 @@
+// import { PropagateLoader } from "react-spinners";
 import { ThemeProvider } from "../theme-provider";
 import { SidebarProvider } from "../ui/sidebar";
 import AppSidebar from "./AppSidebar";
@@ -20,8 +21,11 @@ export default function DefaultLayout({
 
                     <AppSidebar />
                     <main className="md:w-full">
+
                         <Navbar  />
-                        <div className="container">{children}</div>
+
+                        <div className="container">
+                            {children}</div>
                     </main>
                 </SidebarProvider>
             </ThemeProvider >
@@ -30,3 +34,8 @@ export default function DefaultLayout({
 }
 
 // DefaultLayout
+
+
+                // <div className="flex justify-center items-center ">
+                //     <PropagateLoader color="#b7a086" />
+                // </div>

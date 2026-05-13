@@ -15,13 +15,13 @@ import { SaudiRiyal } from "lucide-react";
 export default function CardBanner({ title, description }: { title: string, description: string }) {
   return (
     <Card className="w-full relative grid md:grid-cols-2 items-center justify-between bg-sidebar-accent text-white py-6  shadow-none">
-      <CardHeader className="px-8 flex flex-col items-start gap-3" >
-        <CardTitle className="mb-2 font-medium text-3xl tracking-tight">
+      <CardHeader className=" flex flex-col items-start gap-3" >
+        <CardTitle className="text-4xl font-bold mb-2 tracking-tight">
           {title}
         </CardTitle>
-        <CardDescription className=" max-w-lg text-lg text-slate-100">
+        <p className=" text-lg opacity-90 max-w-md  text-slate-100">
           {description}
-        </CardDescription>
+        </p>
       </CardHeader>
       <CardContent className="flex justify-end gap-4 mr-8">
         <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg border border-white/20">

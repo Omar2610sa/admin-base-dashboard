@@ -23,42 +23,42 @@ const stats = [
         title: "Sections",
         value: "11",
         icon: PanelsTopLeftIcon,
-        iconBg: "bg-red-300/60",
-        iconColor: "text-red-600",
+        iconBg: "bg-red-500/30",
+        iconColor: "text-red-500",
     },
     {
         title: "Features",
         value: "35",
         icon: SparklesIcon,
-        iconBg: "bg-green-300/60",
-        iconColor: "text-green-600",
+        iconBg: "bg-emerald-500/30",
+        iconColor: "text-emerald-500",
     },
     {
         title: "Users",
         value: "985",
         icon: Users,
-        iconBg: "bg-purple-300/60",
-        iconColor: "text-purple-600",
+        iconBg: "bg-purple-500/30",
+        iconColor: "text-purple-500",
     },
     {
         title: "Active Users",
-        value: "69",
+        value: "42",
         icon: TrendingUp,
-        iconBg: "bg-orange-300/60",
-        iconColor: "text-orange-600",
+        iconBg: "bg-orange-500/30",
+        iconColor: "text-orange-500",
     },
     {
         title: "Contacts",
         value: "69",
         icon: ContactIcon,
-        iconBg: "bg-blue-300/60",
-        iconColor: "text-blue-600",
+        iconBg: "bg-blue-500/30",
+        iconColor: "text-blue-500",
     },
     // {
     //     title: "Countries",
     //     value: "69",
     //     icon: Flag,
-    //     iconBg: "bg-yellow-300/60",
+    //     iconBg: "bg-yellow-700/30",
     //     iconColor: "text-yellow-600",
     // },
 ];
@@ -71,9 +71,8 @@ export default function AnalysisCard() {
 
                 return (
                     <Card
-                        size="sm"
                         key={index}
-                        className="rounded-xl   bg-white dark:bg-background shadow-2xs hover:scale-[1.05] hover:border-primary/30 duration-300"
+                        className="bg-card text-card-foreground flex flex-col gap-3 rounded-xl  shadow-sm py-4 px-0 group hover:shadow-lg hover:scale-[1.02] hover:border-primary/30 transition-all duration-300 ease-in-out"
                     >
                         <CardHeader className="flex items-center justify-between ">
 
