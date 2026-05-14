@@ -12,7 +12,19 @@ import {
 } from "../ui/dropdown-menu"
 import { ModeToggle } from '../ui/mode-toggle'
 import { Button } from '../ui/button'
+
+import { useNavigate } from 'react-router-dom';
+
 const Navbar = () => {
+
+
+    const navigate = useNavigate()
+    // HandleLogut
+    const handleLogout = async () => {
+        localStorage.removeItem('token_bablyon');
+        navigate('/login');
+    };
+
     return (
         <nav className='flex py-4 px-6 items-center justify-between border border-b'>
             <div className='flex justify-between items-center gap-5'>
@@ -56,7 +68,7 @@ const Navbar = () => {
 
                             <DropdownMenuItem><User className='h-[1.2rem] w-[1.2rem] mr-2' /> Profile</DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem variant='destructive'><LogOut className='h-[1.2rem] w-[1.2rem] mr-2' /> Logout</DropdownMenuItem>
+                            <DropdownMenuItem onClick={handleLogout} variant='destructive'><LogOut className='h-[1.2rem] w-[1.2rem] mr-2' /> Logout</DropdownMenuItem>
                         </DropdownMenuGroup>
                     </DropdownMenuContent>
                 </DropdownMenu>
