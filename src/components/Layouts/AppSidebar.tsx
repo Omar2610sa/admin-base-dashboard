@@ -15,7 +15,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Home, SparklesIcon, PanelsTopLeftIcon, ContactIcon, FormIcon, Flag, Building2Icon, Bell, BellMinus } from "lucide-react"
+import { Home, SparklesIcon, ContactIcon, FormIcon, Flag, Building2Icon, Bell, BellMinus, SettingsIcon, Shield, Users, Sliders } from "lucide-react"
 
 import { Link, useLocation } from "react-router-dom"
 
@@ -27,10 +27,10 @@ const data = { user: { name: "omar", email: "m@example.com", avatar: "/avatars/s
 
 const sidebarSections = [
     {
-        label: "Main",
+        label: "Dashboard",
         items: [
             { name: "Home", url: "/home", icon: <Home /> },
-            { name: "Sections", url: "/sections", icon: <PanelsTopLeftIcon /> },
+            { name: "Sliders", url: "/sliders", icon: <Sliders /> },
             { name: "Features", url: "/features", icon: <SparklesIcon /> },
         ],
     },
@@ -49,10 +49,31 @@ const sidebarSections = [
         ],
     },
     {
+        label: "Contacts",
+        items: [
+            { name: "Contacts", url: "/contacts", icon: <ContactIcon /> },
+            { name: "Cities", url: "/cities", icon: <Building2Icon /> },
+        ],
+    },
+    {
+        label: "Users",
+        items: [
+            { name: "Role", url: "/role", icon: <Shield /> },
+            { name: "Supervisors", url: "/supervisors", icon: <Users /> },
+            { name: "Users", url: "/Users", icon: <Users /> },
+        ],
+    },
+    {
         label: "Notifications",
         items: [
             { name: "Admin Notifications", url: "/admin-notifications", icon: <Bell /> },
             { name: "Notifications", url: "/notifications", icon: <BellMinus /> },
+        ],
+    },
+    {
+        label: "Settings",
+        items: [
+            { name: "Settings", url: "/setting", icon: <SettingsIcon /> },
         ],
     },
 ];

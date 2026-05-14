@@ -1,4 +1,5 @@
-import AppTable from "@/components/app/base-table/AppTable"
+
+import  AppTable from "@/components/app/base-table/AppTable"
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -22,7 +23,7 @@ const Sections = () => {
                     <BreadcrumbSeparator />
                     <BreadcrumbItem className="flex justify-between gap-2 items-center">
                     <PanelsTopLeftIcon className=" w-5 h-5 text-foreground" />
-                        <BreadcrumbPage className="text-lg text-foreground font-medium ">Sections</BreadcrumbPage>
+                        <BreadcrumbPage className="text-lg text-foreground font-medium ">Sliders</BreadcrumbPage>
                     </BreadcrumbItem>
                 </BreadcrumbList>
             </Breadcrumb>

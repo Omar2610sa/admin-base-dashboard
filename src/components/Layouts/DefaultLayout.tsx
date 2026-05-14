@@ -1,4 +1,5 @@
 // import { PropagateLoader } from "react-spinners";
+import { Outlet } from "react-router-dom";
 import { ThemeProvider } from "../theme-provider";
 import { SidebarProvider } from "../ui/sidebar";
 import AppSidebar from "./AppSidebar";
@@ -7,11 +8,7 @@ import Navbar from "./Navbar";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-export default function DefaultLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function DefaultLayout() {
     
     return (
         <TooltipProvider>
@@ -25,7 +22,8 @@ export default function DefaultLayout({
                         <Navbar  />
 
                         <div className="container">
-                            {children}</div>
+                            <Outlet />
+                            </div>
                     </main>
                 </SidebarProvider>
             </ThemeProvider >

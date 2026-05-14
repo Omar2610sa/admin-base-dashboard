@@ -1,57 +1,48 @@
 import React from 'react'
 
+import { GiftIcon, Layout, User } from 'lucide-react'
 
-import { GiftIcon, HeartIcon, Layout, User } from 'lucide-react'
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { cn } from '@/lib/utils'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 const tabs = [
     {
-        name: 'Layout',
-        value: 'layout',
+        name: 'All',
+        value: 'all',
         icon: Layout,
         iconBg: "bg-red-500/30",
         iconColor: "text-red-500",
-        content: (
-            <>
-                Discover <span className='text-foreground font-semibold'>fresh ideas</span>, trending topics, and hidden gems
-                curated just for you. Start exploring and let your curiosity lead the way!
-            </>
-        )
+
+    },
+
+    {
+        name: 'Layouts',
+        value: 'layouts',
+        icon: GiftIcon,
+
     },
     {
         name: 'Users',
         value: 'users',
         icon: User,
-        content: (
-            <>
-                All your <span className='text-foreground font-semibold'>favorites</span> are saved here. Revisit articles,
-                collections, and moments you love, any time you want a little inspiration.
-            </>
-        )
-    },
-    {
-        name: 'Products',
-        value: 'products',
-        icon: GiftIcon,
-        content: (
-            <>
-                <span className='text-foreground font-semibold'>Surprise!</span> Here&apos;s something unexpected—a fun fact, a
-                quirky tip, or a daily challenge. Come back for a new surprise every day!
-            </>
-        )
-    }
-]
 
-const Tablist = () => {
+    },
+] as const
+
+type TabValue = (typeof tabs)[number]['value']
+
+type TablistProps = {
+    value: TabValue
+    onValueChange: (value: string) => void
+}
+
+const Tablist = ({ value, onValueChange }: TablistProps) => {
     return (
         <div className='w-full  max-w-md  '>
-            <Tabs defaultValue='layout' className='gap-6 '>
+            <Tabs value={value} onValueChange={onValueChange} className='gap-6 '>
                 <TabsList className=' w-full p-5 ' >
                     {tabs.map(({ icon: Icon, name, value }) => (
-                        <TabsTrigger key={value} value={value} className='flex items-center gap-3 p-3.5  data-active:bg-sidebar-accent data-active:text-white sm:px-3 text-sidebar-accent'>
-                            <Icon  />
+                        <TabsTrigger key={value} value={value} className='flex items-center gap-3 p-3.5  data-active:bg-sidebar-accent data-active:dark:bg-sidebar-accent data-active:text-white sm:px-3 text-sidebar-accent'>
+                            <Icon />
                             {name}
                         </TabsTrigger>
                     ))}
@@ -68,3 +59,4 @@ const Tablist = () => {
 }
 
 export default Tablist
+

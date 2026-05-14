@@ -5,7 +5,7 @@ import axios, {
 } from "axios";
 
 const api = axios.create({
-    baseURL: "https://api-araf.vue.aait-d.com/",
+    baseURL: "https://multi-vendors-989.saied.aait-d.com/api",
 
 });
 

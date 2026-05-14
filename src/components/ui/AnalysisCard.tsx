@@ -10,8 +10,9 @@ import {
     SparklesIcon,
     Users,
     TrendingUp,
-    Flag,
     ContactIcon
+
+
 
 } from "lucide-react";
 import { CounterUp } from "../animations/CounterUp";
@@ -25,6 +26,7 @@ const stats = [
         icon: PanelsTopLeftIcon,
         iconBg: "bg-red-500/30",
         iconColor: "text-red-500",
+        type: 'layouts' as const,
     },
     {
         title: "Features",
@@ -32,6 +34,7 @@ const stats = [
         icon: SparklesIcon,
         iconBg: "bg-emerald-500/30",
         iconColor: "text-emerald-500",
+        type: 'layouts' as const,
     },
     {
         title: "Users",
@@ -39,6 +42,7 @@ const stats = [
         icon: Users,
         iconBg: "bg-purple-500/30",
         iconColor: "text-purple-500",
+        type: 'users' as const,
     },
     {
         title: "Active Users",
@@ -46,6 +50,7 @@ const stats = [
         icon: TrendingUp,
         iconBg: "bg-orange-500/30",
         iconColor: "text-orange-500",
+        type: 'users' as const,
     },
     {
         title: "Contacts",
@@ -53,6 +58,7 @@ const stats = [
         icon: ContactIcon,
         iconBg: "bg-blue-500/30",
         iconColor: "text-blue-500",
+        type: 'users' as const,
     },
     // {
     //     title: "Countries",
@@ -60,13 +66,27 @@ const stats = [
     //     icon: Flag,
     //     iconBg: "bg-yellow-700/30",
     //     iconColor: "text-yellow-600",
+    //     type: 'layout' as const,
     // },
-];
+] as const;
 
-export default function AnalysisCard() {
+type AnalysisTab = 'all' | 'users' | 'layouts'
+
+type AnalysisCardProps = {
+    activeTab: AnalysisTab
+}
+
+export default function AnalysisCard({ activeTab }: AnalysisCardProps) {
+    const filteredStats = stats.filter((item) => {
+        if (activeTab === 'all') return true
+        return item.type === activeTab
+    })
+
+
+
     return (
         <div className="grid gap-6 md:grid-cols-5">
-            {stats.map((item, index) => {
+            {filteredStats.map((item, index) => {
                 const Icon = item.icon;
 
                 return (

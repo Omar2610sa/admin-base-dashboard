@@ -164,3 +164,9 @@ body {
     max-width: 1400px;
   }
 }
+
+
+
+.colored-toast .swal2-timer-progress-bar {
+    background: #22c55e; /* green-500 */
+}

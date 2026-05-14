@@ -8,19 +8,20 @@ import {
     BreadcrumbList,
 
 } from "@/components/ui/breadcrumb"
+import { useState } from "react"
 import { Home } from "lucide-react"
 
-
-// import  useFetch  from "@/hooks/useFetch"
+import  useFetch  from "@/hooks/useFetch"
 // className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-4'
 
 const HomePage = () => {
+    const [activeTab, setActiveTab] = useState<'all' | 'users' | 'layouts'>('all')
 
-    // const { data: statistics } = useFetch("/api/admin/statistics");
+    const { data: statistics } = useFetch("/dashboard/admin/sliders");
 
-
-    // console.log(statistics)
+    console.log(statistics)
     return (
+
         <div className="flex flex-col gap-5">
 
             {/* Breadcrump */}
@@ -37,11 +38,13 @@ const HomePage = () => {
             <CardBanner title="Welcome Back" description="Here's what's happening with your Website today." />
 
             {/* Tablist */}
-            <Tablist />
+            <Tablist value={activeTab} onValueChange={(v) => setActiveTab(v as 'all' | 'users' | 'layouts')} />
+
 
             {/* Cards */}
 
-            <AnalysisCard />
+            <AnalysisCard activeTab={activeTab} />
+
 
         </div>
     )
