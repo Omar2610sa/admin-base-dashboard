@@ -167,6 +167,12 @@ body {
 
 
 
-.colored-toast .swal2-timer-progress-bar {
-    background: #22c55e; /* green-500 */
+.swal2-timer-progress-bar {
+    background: #22c55e !important; /* green-500 */
 }
+
+/* .swal2-timer-progress-bar {
+  background: #ff4d4f !important;
+  height: 6px !important;
+  border-radius: 10px;
+} */
