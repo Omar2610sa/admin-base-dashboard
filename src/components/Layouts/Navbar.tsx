@@ -26,8 +26,8 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='flex py-4 px-6 items-center justify-between border border-b'>
-            <div className='flex justify-between items-center gap-5'>
+        <nav className='flex py-4 px-6 items-center  justify-between border border-b'>
+            <div className='flex justify-between  items-center gap-5'>
 
 
                 {/* Input serach */}
@@ -54,7 +54,7 @@ const Navbar = () => {
 
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Avatar className='flex justify-center items-center bg-sidebar-accent'>
+                        <Avatar className='flex justify-center items-center bg-sidebar-accent text-white'>
                             SA
                         </Avatar>
                     </DropdownMenuTrigger>

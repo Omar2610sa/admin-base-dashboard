@@ -48,13 +48,7 @@ const sidebarSections = [
             { name: "Cities", url: "/cities", icon: <Building2Icon /> },
         ],
     },
-    {
-        label: "Contacts",
-        items: [
-            { name: "Contacts", url: "/contacts", icon: <ContactIcon /> },
-            { name: "Cities", url: "/cities", icon: <Building2Icon /> },
-        ],
-    },
+
     {
         label: "Users",
         items: [

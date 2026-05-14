@@ -168,9 +168,11 @@ body {
 
 
 .swal2-timer-progress-bar {
-    background: #22c55e !important; /* green-500 */
+    background: var(--sidebar-accent) !important; /* green-500 */
 }
-
+.swal2-color{
+  color: var(--sidebar-accent) !important;
+}
 /* .swal2-timer-progress-bar {
   background: #ff4d4f !important;
   height: 6px !important;

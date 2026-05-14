@@ -8,7 +8,7 @@ const toast = Swal.mixin({
     timer: 3000,
     timerProgressBar: true,
     // background: "#0f172a",
-    // color: "#fff",
+    color: "#800080",
     theme: "material-ui-dark"
 
 

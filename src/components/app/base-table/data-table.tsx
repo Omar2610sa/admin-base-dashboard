@@ -64,22 +64,22 @@ export function DataTable<TData, TValue>({
             <div className="flex items-center py-4">
                 <Input
                     placeholder="Search"
-                    value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
+                    value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
                     onChange={(event) =>
-                        table.getColumn("title")?.setFilterValue(event.target.value)
+                        table.getColumn("name")?.setFilterValue(event.target.value)
                     }
                     className="max-w-3xs p-3 focus-visible:ring-sidebar-accent shadow-2xl"
                 />
             </div>
             <div className="overflow-hidden rounded-md border">
 
-                <Table className="">
-                    <TableHeader>
+                <Table className=" text-center">
+                    <TableHeader >
                         {table.getHeaderGroups().map((headerGroup) => (
-                            <TableRow key={headerGroup.id}>
+                            <TableRow  key={headerGroup.id}>
                                 {headerGroup.headers.map((header) => {
                                     return (
-                                        <TableHead key={header.id}>
+                                        <TableHead className="text-sidebar-accent text-center" key={header.id}>
                                             {header.isPlaceholder
                                                 ? null
                                                 : flexRender(

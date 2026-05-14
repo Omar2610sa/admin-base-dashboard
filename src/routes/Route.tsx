@@ -6,6 +6,10 @@ import Sliders from '@/pages/Sliders/Sliders';
 
 import { Routes, Route } from "react-router-dom";
 import ProtectRoute from './ProtectRoute';
+import Contacts from '@/pages/Contacts/Contacts';
+import Role from '@/pages/Role/Role';
+import Cities from '@/pages/Cities/Cities';
+import Countries from '@/pages/Countries/Countries';
 
 const RoutePaths = () => {
     return (
@@ -31,12 +35,13 @@ const RoutePaths = () => {
                     {/* Placeholder routes to keep sidebar navigation functional */}
                     <Route path="/sliders" element={<Sliders />} />
                     <Route path="/features" element={<HomePage />} />
-                    <Route path="/contacts" element={<HomePage />} />
+                    <Route path="/contacts" element={<Contacts />} />
                     <Route path="/applications" element={<HomePage />} />
-                    <Route path="/countries" element={<HomePage />} />
-                    <Route path="/cities" element={<HomePage />} />
+                    <Route path="/countries" element={<Countries />} />
                     <Route path="/admin-notifications" element={<HomePage />} />
                     <Route path="/notifications" element={<HomePage />} />
+                    <Route path="/role" element={<Role />} />
+                    <Route path="/cities" element={<Cities />} />
                 </Route>
             </Route>
 

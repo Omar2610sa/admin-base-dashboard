@@ -72,9 +72,9 @@ export const columns: ColumnDef<AppTable>[] = [
                 // >
                 //     {status as string}
                 // </div>
-                <>
+                <div className="flex justify-center">
                     <ActiveSwitcher />
-                </>
+                </div>
             );
         },
     },
