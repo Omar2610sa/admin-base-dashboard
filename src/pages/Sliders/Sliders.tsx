@@ -14,18 +14,7 @@ import ImagePreviewCell from "@/components/ImagePreviewCell/ImagePreviewCell"
 
 
 interface Slider {
-    id: number,
-    title: string,
-    description: string,
-    discount: number,
-    type: string,
-    is_active: boolean,
-    start_at: string,
-    end_at: string,
-    image: {
-        id: number
-        media: string
-    }
+x
 }
 
 
