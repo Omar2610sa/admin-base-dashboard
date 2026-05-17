@@ -2,7 +2,6 @@ import AuthLayout from '@/components/Layouts/AuthLayout';
 import DefaultLayout from '@/components/Layouts/DefaultLayout';
 import Login from '@/pages/Auth/Login';
 import HomePage from '@/pages/Home/HomePage';
-import Sliders from '@/pages/Sliders/Sliders';
 
 import { Routes, Route } from "react-router-dom";
 import ProtectRoute from './ProtectRoute';
@@ -10,6 +9,7 @@ import Contacts from '@/pages/Contacts/Contacts';
 import Role from '@/pages/Role/Role';
 import Cities from '@/pages/Cities/Cities';
 import Countries from '@/pages/Countries/Countries';
+import Slider from '@/pages/Sliders/Sliders';
 
 const RoutePaths = () => {
     return (
@@ -33,7 +33,7 @@ const RoutePaths = () => {
                     <Route path="/" element={<HomePage />} />
 
                     {/* Placeholder routes to keep sidebar navigation functional */}
-                    <Route path="/sliders" element={<Sliders />} />
+                    <Route path="/sliders" element={<Slider />} />
                     <Route path="/features" element={<HomePage />} />
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/applications" element={<HomePage />} />

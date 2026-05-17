@@ -11,15 +11,12 @@ import {
 import { useState } from "react"
 import { Home } from "lucide-react"
 
-import  useFetch  from "@/hooks/useFetch"
 // className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-4'
 
 const HomePage = () => {
     const [activeTab, setActiveTab] = useState<'all' | 'users' | 'layouts'>('all')
 
-    const { data: statistics } = useFetch("/dashboard/admin/sliders");
 
-    console.log(statistics)
     return (
 
         <div className="flex flex-col gap-5">

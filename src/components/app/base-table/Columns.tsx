@@ -36,7 +36,7 @@ export const columns: ColumnDef<AppTable>[] = [
             return (
                 <Button
                     variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
                 >
                     Title
                     <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -55,28 +55,6 @@ export const columns: ColumnDef<AppTable>[] = [
                 </>
             )
         }
-    },
-    {
-        accessorKey: "status",
-        header: "Status",
-        cell: ({ row }) => {
-            const status = row.getValue("status");
-
-            return (
-                // <div 
-                //     className={cn(
-                //         `p-1 rounded-md w-max text-xs`,
-                //         status === "active" && "bg-green-500/40",
-                //         status === "desactive" && "bg-red-200 text-red-500"
-                //     )}
-                // >
-                //     {status as string}
-                // </div>
-                <div className="flex justify-center">
-                    <ActiveSwitcher />
-                </div>
-            );
-        },
     },
     {
         id: "actions",

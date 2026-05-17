@@ -21,6 +21,7 @@ import { Link, useLocation } from "react-router-dom"
 
 
 import { SidebarInset, SidebarTrigger } from '../ui/sidebar'
+import Slider from "@/pages/Sliders/Sliders"
 
 
 const data = { user: { name: "omar", email: "m@example.com", avatar: "/avatars/shadcn.jpg", }, }

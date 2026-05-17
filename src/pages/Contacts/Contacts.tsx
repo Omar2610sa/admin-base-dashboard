@@ -6,7 +6,7 @@ import CustomTable from "@/components/app/base-table/CustomTable";
 
 
 
-import logo from "@/assets/logoo.png"; // تأكد من مسار الصورة
+import logo from "@/assets/logoo.png"; 
 import { ContactIcon, DeleteIcon, EditIcon, Home, PlusCircleIcon } from "lucide-react";
 import { DataTable } from "@/components/app/base-table/data-table";
 import BreadCrumb from "@/components/BreadCrumb/BreadCrumb";
@@ -247,30 +247,23 @@ export const Contacts = () => {
     }
 
     // Name مع الصورة
-    if (columnId === "name") {
-      return (
-        <div className="flex items-center justify-end sm:justify-start gap-2">
-          <img
-            src={rowData?.image}
-            alt={rowData?.name}
-            className="size-12 rounded-full object-cover"
-          />
-          <div>
-            {rowData?.name || <span className="text-gray-500 italic">No Data</span>}
-          </div>
-        </div>
-      );
-    }
+    // if (columnId === "name") {
+    //   return (
+    //     <div className="flex items-center justify-end sm:justify-start gap-2">
+    //       <img
+    //         src={rowData?.image}
+    //         alt={rowData?.name}
+    //         className="size-12 rounded-full object-cover"
+    //       />
+    //       <div>
+    //         {rowData?.name || <span className="text-gray-500 italic">No Data</span>}
+    //       </div>
+    //     </div>
+    //   );
+    // }
 
     // Created At
-    if (columnId === "created_at") {
-      return (
-        <div className="bg-red-500">
-          {rowData?.created_at || "No Data"}
-        </div>
-      );
-    }
-
+ 
     // Business Field
     if (columnId === "business_field") {
       return <div>{rowData?.business_field || "No Data"}</div>;
@@ -281,21 +274,7 @@ export const Contacts = () => {
       return <div >{rowData?.commercial_registration || "No Data"}</div>;
     }
 
-    // Status (Ban)
-    if (columnId === "is_ban") {
-      return (
-        <div>
-          <span
-            className={`px-3 py-1 rounded-full text-sm font-medium ${rowData.is_ban
-              ? "bg-red-100 text-red-800"
-              : "bg-green-100 text-green-800"
-              }`}
-          >
-            {rowData.is_ban ? "Banned" : "Active"}
-          </span>
-        </div>
-      );
-    }
+
 
     // Actions
     if (columnId === "actions") {
