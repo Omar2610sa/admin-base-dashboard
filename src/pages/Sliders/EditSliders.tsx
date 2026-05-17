@@ -40,7 +40,7 @@ type SliderEditFormValues = {
   is_active: boolean;
   start_at: string;
   end_at: string;
-  iamge?: string;
+  image?: string;
 };
 
 
@@ -52,13 +52,14 @@ const validationSchema = Yup.object({
   is_active: Yup.boolean().required(),
   start_at: Yup.string().required('Start date is required'),
   end_at: Yup.string().required('End date is required'),
-  iamge: Yup.mixed<File>().notRequired(),
+  image: Yup.mixed<File>().notRequired(),
 });
 
 
 const EditSliders = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+  const [uploadingMedia, setUploadingMedia] = useState(false);
 
   const sliderId = React.useMemo(() => {
 
@@ -72,22 +73,9 @@ const EditSliders = () => {
     loading,
   } = useFetch<SliderResponse>(sliderId ? `/dashboard/admin/sliders/${sliderId}` : '');
 
-  const [previewUrl, setPreviewUrl] = React.useState<string>('');
 
 
-
-
-
-  // previewUrl starts empty; when data loads we use currentPreviewUrl for the <img>.
-
-
-
-
-  if (loading) {
-    return (
-      <Loading />
-    );
-  }
+  if (loading) return <Loading />
 
 
 
@@ -100,7 +88,7 @@ const EditSliders = () => {
     is_active: slider?.is_active ?? true,
     start_at: slider?.start_at ?? '',
     end_at: slider?.end_at ?? '',
-    iamge: slider?.image.media,
+    image: slider?.image.media,
   };
 
 
@@ -121,8 +109,8 @@ const EditSliders = () => {
       formData.append('start_at', values.start_at);
       formData.append('end_at', values.end_at);
 
-      if (values.iamge) {
-        formData.append('image', values.iamge);
+      if (values.image) {
+        formData.append('image', values.image);
       }
 
 
@@ -136,6 +124,14 @@ const EditSliders = () => {
       UnSuccessAlert();
     } finally {
       setSubmitting(false);
+    }
+  };
+
+    const handleMediaChange = (e) => {
+    const file = e.target.files[0];
+    setMediaPreview(URL.createObjectURL(file))
+    if (file) {
+      uploadMedia(file);
     }
   };
 
@@ -166,12 +162,19 @@ const EditSliders = () => {
                       <div className="flex flex-col gap-3">
                         <div className="flex items-center justify-center gap-4">
                           <img
-                            src={initialValues.iamge}
+                            src={initialValues.image}
                             alt="slider"
                             className="size-24 rounded-full bg-slate-100 object-contain"
                           />
                         </div>
-
+                        <input
+                          id="media-upload"
+                          type="file"
+                          accept="image/*,video/*"
+                          onChange={handleMediaChange}
+                          className="hidden"
+                          disabled={uploadingMedia}
+                        />
 
                       </div>
 
