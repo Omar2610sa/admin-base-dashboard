@@ -36,7 +36,7 @@ export const columns: ColumnDef<AppTable>[] = [
             return (
                 <Button
                     variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
                     Title
                     <ArrowUpDown className="ml-2 h-4 w-4" />

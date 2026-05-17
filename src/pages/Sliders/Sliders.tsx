@@ -10,6 +10,7 @@ import useFetch from "@/hooks/useFetch"
 import Loading from "@/components/Loading"
 import { DataTable } from "@/components/app/base-table/data-table"
 import { Button } from "@/components/ui/button"
+import ImagePreviewCell from "@/components/ImagePreviewCell/ImagePreviewCell"
 
 
 interface Slider {
@@ -32,27 +33,40 @@ const columns: ColumnDef<Slider>[] = [
     {
         accessorKey: "image",
         header: "Image",
-        cell: ({ row }) => {
-
-            const imageUrl = row.original.image.media
-            return (
-                <>
-                    <img
-                        src={imageUrl}
-                        className="size-14  rounded-full mx-auto bg-slate-100 object-contain"
-                    />
-                </>
-            )
-        }
+        cell: ({ row }) => (
+            <ImagePreviewCell
+                imageUrl={row.original.image.media}
+            />
+        )
     },
     {
         accessorKey: "title",
-        header: "Title",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Title
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
     },
 
     {
         accessorKey: "discount",
-        header: 'Discount',
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Discount
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
         cell: ({ row }) => {
             return (
                 <span>
@@ -77,32 +91,11 @@ const columns: ColumnDef<Slider>[] = [
     },
     {
         accessorKey: 'start_at',
-        header: ({ column }) => {
-            return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-                >
-                    Start At
-                    <ArrowUpDown className="ml-2 h-4 w-4" />
-                </Button>
-            )
-        },
-
+        header: 'Start at',
     },
     {
         accessorKey: 'end_at',
-        header: ({ column }) => {
-            return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-                >
-                    End At
-                    <ArrowUpDown className="ml-2 h-4 w-4" />
-                </Button>
-            )
-        },
+        header: "End at"
 
     },
     {
