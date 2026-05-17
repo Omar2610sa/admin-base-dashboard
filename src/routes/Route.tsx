@@ -10,6 +10,7 @@ import Role from '@/pages/Role/Role';
 import Cities from '@/pages/Cities/Cities';
 import Countries from '@/pages/Countries/Countries';
 import Slider from '@/pages/Sliders/Sliders';
+import EditSliders from '@/pages/Sliders/EditSliders';
 
 const RoutePaths = () => {
     return (
@@ -34,6 +35,7 @@ const RoutePaths = () => {
 
                     {/* Placeholder routes to keep sidebar navigation functional */}
                     <Route path="/sliders" element={<Slider />} />
+                    <Route path="/sliders/edit/:id" element={<EditSliders />} />
                     <Route path="/features" element={<HomePage />} />
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/applications" element={<HomePage />} />

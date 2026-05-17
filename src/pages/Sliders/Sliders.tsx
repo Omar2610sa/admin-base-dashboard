@@ -111,7 +111,7 @@ const columns: ColumnDef<Slider>[] = [
     {
         accessorKey: "actions",
         header: "Actions",
-        cell: () => <TableActions />
+        cell: ({ row }) => <TableActions id={row.original.id.toString()} />
     }
 ]
 
@@ -127,7 +127,10 @@ const Slider = () => {
             <BreadCrumb path="Contacts" icon={Sliders} />
 
             {/* App Table */}
+            <div>
+
             <DataTable columns={columns} data={data} />
+            </div>
 
         </div>
     )

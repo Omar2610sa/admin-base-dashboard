@@ -56,7 +56,7 @@ const columns: ColumnDef<Cities>[] = [
     },
     {
         accessorKey: "country",
-        header: "phone_code",
+        header: "Phone Code",
         cell: ({ row }) => {
             return (
                 <span>+

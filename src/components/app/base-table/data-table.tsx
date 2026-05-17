@@ -73,13 +73,13 @@ export function DataTable<TData, TValue>({
             </div>
             <div className="overflow-hidden rounded-md border">
 
-                <Table className=" text-center">
+                <Table className=" text-center ">
                     <TableHeader >
                         {table.getHeaderGroups().map((headerGroup) => (
-                            <TableRow  key={headerGroup.id}>
+                            <TableRow   key={headerGroup.id}>
                                 {headerGroup.headers.map((header) => {
                                     return (
-                                        <TableHead className="text-sidebar-accent text-center " key={header.id}>
+                                        <TableHead className="text-sidebar-accent  text-center " key={header.id}>
                                             {header.isPlaceholder
                                                 ? null
                                                 : flexRender(

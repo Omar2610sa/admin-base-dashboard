@@ -10,13 +10,15 @@ import { Home } from "lucide-react"
 import type { LucideIcon } from "lucide-react";
 
 
-type paths ={
+type paths = {
     path: string,
-    icon : LucideIcon
+    pathEdit?: string,
+    icon: LucideIcon,
+    iconEdit: LucideIcon
 }
 
 
-const BreadCrumb = ({path, icon: Icon }: paths) => {
+const BreadCrumb = ({ path, pathEdit, icon: Icon, iconEdit: IconEdit }: paths) => {
     return (
         <Breadcrumb>
             <BreadcrumbList>
@@ -27,9 +29,18 @@ const BreadCrumb = ({path, icon: Icon }: paths) => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem className="flex justify-between gap-2 items-center">
-                    <Icon  className=" size-5  text-foreground" />
+                    <Icon className=" size-5  text-foreground" />
                     <BreadcrumbPage className="text-lg text-foreground font-medium ">{path}</BreadcrumbPage>
                 </BreadcrumbItem>
+                {
+                    // Edit this part to make it dynamic based on the path
+                    pathEdit === "Edit Slider" ? <><BreadcrumbSeparator />
+                        <BreadcrumbItem className="flex justify-between gap-2 items-center">
+                            <IconEdit className=" size-5  text-foreground" />
+                            <BreadcrumbPage className="text-lg text-foreground font-medium ">{pathEdit}</BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </> : null
+                }
             </BreadcrumbList>
         </Breadcrumb>
     )
