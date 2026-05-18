@@ -15,13 +15,12 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Home, SparklesIcon, ContactIcon, FormIcon, Flag, Building2Icon, Bell, BellMinus, SettingsIcon, Shield, Users, Sliders } from "lucide-react"
+import { Home,  ContactIcon, FormIcon, Flag, Building2Icon, Bell, BellMinus, SettingsIcon, Shield, Users, Sliders, GiftIcon, WalletCardsIcon, BadgeQuestionMark, GpuIcon } from "lucide-react"
 
 import { Link, useLocation } from "react-router-dom"
 
 
 import { SidebarInset, SidebarTrigger } from '../ui/sidebar'
-import Slider from "@/pages/Sliders/Sliders"
 
 
 const data = { user: { name: "omar", email: "m@example.com", avatar: "/avatars/shadcn.jpg", }, }
@@ -32,14 +31,26 @@ const sidebarSections = [
         items: [
             { name: "Home", url: "/home", icon: <Home /> },
             { name: "Sliders", url: "/sliders", icon: <Sliders /> },
-            { name: "Features", url: "/features", icon: <SparklesIcon /> },
+            { name: "FAQ", url: "/Faqs", icon: <BadgeQuestionMark /> },
+        ],
+    },
+    // {
+    //     label: "Products",
+    //     items: [
+    //         { name: "Products", url: "/products", icon: <GpuIcon /> },
+    //     ],
+    // },
+    {
+        label: "Earning",
+        items: [
+            { name: "Gifts", url: "/gifts", icon: <GiftIcon /> },
+            { name: "Coupons", url: "/coupons", icon: <WalletCardsIcon /> },
         ],
     },
     {
         label: "Communications",
         items: [
             { name: "Contacts", url: "/contacts", icon: <ContactIcon /> },
-            { name: "Applications", url: "/applications", icon: <FormIcon /> },
         ],
     },
     {

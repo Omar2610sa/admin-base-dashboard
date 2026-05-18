@@ -99,13 +99,13 @@ export const Contacts = () => {
   if (loading) return <Loading />
 
   return (
-    <div className="flex flex-col  max-w-dvw">
+    <div className="flex flex-col  gap-5">
       {/* Breadcrump */}
 
       <BreadCrumb path="Contacts" icon={ContactIcon} />
 
 
-      <DataTable columns={columns} data={data} />
+      <DataTable columns={columns} data={data} searchColumnId="full_name" />
     </div>
   );
 };

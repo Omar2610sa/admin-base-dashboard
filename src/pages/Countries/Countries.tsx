@@ -94,7 +94,10 @@ const Countries = () => {
 
     return (
         <div className='flex flex-col'>
+            {/* Breadcrumb */}
             <BreadCrumb path='Countries' icon={Flag} />
+            
+            {/* App table */}
             <DataTable columns={columns} data={data} searchColumnId='name' />
         </div>
     )

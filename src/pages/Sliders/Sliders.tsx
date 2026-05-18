@@ -91,11 +91,11 @@ const columns: ColumnDef<Slider>[] = [
     },
     {
         accessorKey: 'start_at',
-        header: 'Start at',
+        header: 'Start',
     },
     {
         accessorKey: 'end_at',
-        header: "End at"
+        header: "End"
 
     },
     {
