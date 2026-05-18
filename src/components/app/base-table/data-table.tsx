@@ -25,15 +25,19 @@ import { DataTablePagination } from "@/components/TablePagination"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { SearchXIcon } from "lucide-react"
+import FiltersBtns from "@/components/FiltersBtns/FiltersBtns"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
-    data: TData[]
+    data: TData[],
+    searchColumnId?: string
+
 }
 
 export function DataTable<TData, TValue>({
     columns,
     data,
+    searchColumnId
 }: DataTableProps<TData, TValue>) {
 
     const [sorting, setSorting] = useState<SortingState>([])
@@ -60,23 +64,20 @@ export function DataTable<TData, TValue>({
     return (
         <div>
 
-            {/* Fitlerations */}
-            <div className="flex items-center py-4">
-                <Input
-                    placeholder="Search"
-                    value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-                    onChange={(event) =>
-                        table.getColumn("name")?.setFilterValue(event.target.value)
-                    }
-                    className="max-w-3xs p-3 focus-visible:ring-sidebar-accent shadow-2xl"
-                />
-            </div>
+            {/* Filters */}
+            {searchColumnId && (
+                <FiltersBtns table={table} columnId={searchColumnId} />
+            )}
+
             <div className="overflow-hidden rounded-md border">
 
+
+
+                {/* Table */}
                 <Table className=" text-center ">
                     <TableHeader >
                         {table.getHeaderGroups().map((headerGroup) => (
-                            <TableRow   key={headerGroup.id}>
+                            <TableRow key={headerGroup.id}>
                                 {headerGroup.headers.map((header) => {
                                     return (
                                         <TableHead className="text-sidebar-accent  text-center " key={header.id}>

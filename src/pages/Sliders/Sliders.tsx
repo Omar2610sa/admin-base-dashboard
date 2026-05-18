@@ -14,7 +14,18 @@ import ImagePreviewCell from "@/components/ImagePreviewCell/ImagePreviewCell"
 
 
 interface Slider {
-x
+    id: number,
+    title: string,
+    description: string,
+    discount: number,
+    type: string,
+    is_active: boolean,
+    start_at: string,
+    end_at: string,
+    image: {
+        id: number
+        media: string
+    }
 }
 
 
@@ -100,7 +111,7 @@ const columns: ColumnDef<Slider>[] = [
     {
         accessorKey: "actions",
         header: "Actions",
-        cell: ({ row }) => <TableActions id={row.original.id.toString()} />
+        cell: ({ row }) => <TableActions to={`/sliders/edit/${row.original.id.toString()}`} />
     }
 ]
 
@@ -111,14 +122,14 @@ const Slider = () => {
 
 
     return (
-        <div className='flex flex-col '>
+        <div className='flex flex-col gap-5 '>
             {/* BreadCrumb */}
-            <BreadCrumb path="Contacts" icon={Sliders} />
+            <BreadCrumb path="Sliders" icon={Sliders} />
 
             {/* App Table */}
             <div>
 
-            <DataTable columns={columns} data={data} />
+                <DataTable columns={columns} data={data} searchColumnId="title" />
             </div>
 
         </div>

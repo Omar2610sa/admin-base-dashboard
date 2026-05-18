@@ -11,7 +11,7 @@ import { MoreHorizontal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
 
-const TableActions = ({ id }: { id: string }) => {
+const TableActions = ({ to }: { to: string }) => {
     return (
         <DropdownMenu >
             <DropdownMenuTrigger asChild>
@@ -23,8 +23,8 @@ const TableActions = ({ id }: { id: string }) => {
             <DropdownMenuContent >
                 <DropdownMenuLabel className="flex items-center text-xs justify-center">Actions</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <Link to={`/sliders/edit/${id}`}>
-                <DropdownMenuItem className="justify-center">Edit</DropdownMenuItem>
+                <Link to={to}>
+                    <DropdownMenuItem className="justify-center">Edit</DropdownMenuItem>
                 </Link>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem variant="destructive" className=" p-1 justify-center"

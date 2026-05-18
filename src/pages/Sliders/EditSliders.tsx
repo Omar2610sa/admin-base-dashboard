@@ -16,13 +16,22 @@ import { SuccessAlert } from '@/components/Alerts/SuccessAlert';
 import { UnSuccessAlert } from '@/components/Alerts/UnSuccessAlert';
 import MediaUpload from '@/components/media-upload/MediaUpload';
 import ActiveSwitcher from '@/components/ActiveSwitcher';
-import { time } from 'framer-motion';
 import { Textarea } from '@/components/ui/textarea';
 
 type SliderResponse = {
   id: number;
-  title: string;
-  description: string;
+  ar: {
+    title: string;
+    description: string;
+  };
+  en: {
+    title: string;
+    description: string;
+  };
+  ku: {
+    title: string;
+    description: string;
+  };
   discount: number;
   type: string;
   platform: string;
@@ -36,12 +45,18 @@ type SliderResponse = {
 };
 
 type SliderEditFormValues = {
-  title_ar: string;
-  title_en: string;
-  title_ku: string;
-  description_ar: string;
-  description_en: string;
-  description_ku: string;
+  ar: {
+    title: string;
+    description: string;
+  };
+  en: {
+    title: string;
+    description: string;
+  };
+  ku: {
+    title: string;
+    description: string;
+  };
   discount: number;
   type: string;
   platform: string;
@@ -52,21 +67,38 @@ type SliderEditFormValues = {
 };
 
 const validationSchema = Yup.object({
-  title_ar: Yup.string().required('Title (Ar) is required'),
-  title_en: Yup.string().required('Title (En) is required'),
-  title_ku: Yup.string().required('Title (Ku) is required'),
-  description_ar: Yup.string().required('Description (Ar) is required'),
-  description_en: Yup.string().required('Description (En) is required'),
-  description_ku: Yup.string().required('Description (Ku) is required'),
-  discount: Yup.number().typeError('Discount must be a number').min(0).required('Discount is required'),
+  ar: Yup.object({
+    title: Yup.string().required('Title (Ar) is required'),
+    description: Yup.string().required('Description (Ar) is required'),
+  }),
+
+  en: Yup.object({
+    title: Yup.string().required('Title (En) is required'),
+    description: Yup.string().required('Description (En) is required'),
+  }),
+
+  ku: Yup.object({
+    title: Yup.string().required('Title (Ku) is required'),
+    description: Yup.string().required('Description (Ku) is required'),
+  }),
+
+  discount: Yup.number()
+    .typeError('Discount must be a number')
+    .min(0)
+    .required('Discount is required'),
+
   type: Yup.string().required('Type is required'),
+
   platform: Yup.string().required('Platform is required'),
+
   is_active: Yup.boolean().required('Status is required'),
+
   start_at: Yup.string().required('Start date is required'),
+
   end_at: Yup.string().required('End date is required'),
+
   image: Yup.mixed().nullable().notRequired(),
 });
-
 const EditSliders = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -84,12 +116,18 @@ const EditSliders = () => {
   if (loading) return <Loading />;
 
   const initialValues: SliderEditFormValues = {
-    title_ar: slider?.title ?? '',
-    title_en: slider?.title ?? '',
-    title_ku: slider?.title ?? '',
-    description_ar: slider?.description ?? '',
-    description_en: slider?.description ?? '',
-    description_ku: slider?.description ?? '',
+    ar: {
+      title: slider?.ar?.title ?? '',
+      description: slider?.ar?.description ?? ''
+    },
+    en: {
+      title: slider?.en?.title ?? '',
+      description: slider?.en?.description ?? ''
+    },
+    ku: {
+      title: slider?.ku?.title ?? '',
+      description: slider?.ku?.description ?? ''
+    },
     discount: slider?.discount ?? 0,
     type: slider?.type ?? '',
     platform: slider?.platform ?? 'both',
@@ -109,12 +147,12 @@ const EditSliders = () => {
       setSubmitting(true);
 
       const formData = new FormData();
-      formData.append('ar[title]', values.title_ar);
-      formData.append('en[title]', values.title_en);
-      formData.append('ku[title]', values.title_ku);
-      formData.append('ar[description]', values.description_ar);
-      formData.append('en[description]', values.description_en);
-      formData.append('ku[description]', values.description_ku);
+      formData.append('ar[title]', values.ar.title);
+      formData.append('en[title]', values.en.title);
+      formData.append('ku[title]', values.ku.title);
+      formData.append('ar[description]', values.ar.description);
+      formData.append('en[description]', values.en.description);
+      formData.append('ku[description]', values.ku.description);
       formData.append('discount', String(values.discount));
       formData.append('type', values.type);
       formData.append('platform', values.platform);
@@ -124,9 +162,7 @@ const EditSliders = () => {
       formData.append('end_at', values.end_at);
       formData.append('_method', id ? "put" : "post");
 
-      // ✅ بعت الـ image response object بدل الـ filename
       if (values.image) {
-        // لو كان object (الـ response من الـ upload)
         if (typeof values.image === 'object' && !(values.image instanceof File)) {
           const imageData = values.image as Record<string, unknown>;
           formData.append('image', String(imageData.data || imageData));
@@ -199,10 +235,10 @@ const EditSliders = () => {
                         <Input
                           id="title_ar"
                           name="title_ar"
-                          value={values.title_ar}
-                          onChange={(e) => setFieldValue('title_ar', e.target.value)}
+                          value={values.ar.title}
+                          onChange={(e) => setFieldValue('ar.title', e.target.value)}
                         />
-                        <FieldError errors={touched.title_ar ? [{ message: errors.title_ar }] : []} />
+                        <FieldError errors={touched.ar?.title ? [{ message: errors.ar?.title }] : []} />
                       </FieldContent>
                     </Field>
                     {/* Title En */}
@@ -212,10 +248,10 @@ const EditSliders = () => {
                         <Input
                           id="title_en"
                           name="title_en"
-                          value={values.title_en}
-                          onChange={(e) => setFieldValue('title_en', e.target.value)}
+                          value={values.en.title}
+                          onChange={(e) => setFieldValue('en.title', e.target.value)}
                         />
-                        <FieldError errors={touched.title_en ? [{ message: errors.title_en }] : []} />
+                        <FieldError errors={touched.en?.title ? [{ message: errors.en?.title }] : []} />
                       </FieldContent>
                     </Field>
                     {/* Title Ku */}
@@ -225,10 +261,10 @@ const EditSliders = () => {
                         <Input
                           id="title_ku"
                           name="title_ku"
-                          value={values.title_ku}
-                          onChange={(e) => setFieldValue('title_ku', e.target.value)}
+                          value={values.ku.title}
+                          onChange={(e) => setFieldValue('ku.title', e.target.value)}
                         />
-                        <FieldError errors={touched.title_ku ? [{ message: errors.title_ku }] : []} />
+                        <FieldError errors={touched.ku?.title ? [{ message: errors.ku?.title }] : []} />
                       </FieldContent>
                     </Field>
 
@@ -243,11 +279,11 @@ const EditSliders = () => {
                         <Textarea
                           id="description_ar"
                           name="description_ar"
-                          value={values.description_ar}
-                          onChange={(e) => setFieldValue('description_ar', e.target.value)}
+                          value={values.ar.description}
+                          onChange={(e) => setFieldValue('ar.description', e.target.value)}
                         />
                         <FieldError
-                          errors={touched.description_ar ? [{ message: errors.description_ar }] : []}
+                          errors={touched.ar?.description ? [{ message: errors.ar?.description }] : []}
                         />
                       </FieldContent>
                     </Field>
@@ -259,11 +295,11 @@ const EditSliders = () => {
                         <Textarea
                           id="description_en"
                           name="description_en"
-                          value={values.description_en}
-                          onChange={(e) => setFieldValue('description_en', e.target.value)}
+                          value={values.en.description}
+                          onChange={(e) => setFieldValue('en.description', e.target.value)}
                         />
                         <FieldError
-                          errors={touched.description_en ? [{ message: errors.description_en }] : []}
+                          errors={touched.en?.description ? [{ message: errors.en?.description }] : []}
                         />
                       </FieldContent>
                     </Field>
@@ -272,14 +308,14 @@ const EditSliders = () => {
                       <FieldLabel htmlFor="description_ku">Description (Ku)</FieldLabel>
                       <FieldContent>
                         <Textarea
-                          
+
                           id="description_ku"
                           name="description_ku"
-                          value={values.description_ku}
-                          onChange={(e) => setFieldValue('description_ku', e.target.value)}
+                          value={values.ku.description}
+                          onChange={(e) => setFieldValue('ku.description', e.target.value)}
                         />
                         <FieldError
-                          errors={touched.description_ku ? [{ message: errors.description_ku }] : []}
+                          errors={touched.ku?.description ? [{ message: errors.ku?.description }] : []}
                         />
                       </FieldContent>
                     </Field>
@@ -378,9 +414,17 @@ const EditSliders = () => {
                   </div>
                 </CardContent>
 
-                <CardFooter>
+                <CardFooter className='flex justify-between'>
                   <Button className="bg-sidebar-accent" type="submit" disabled={isSubmitting}>
                     {isSubmitting ? 'Saving...' : 'Save Changes'}
+                  </Button>
+                  <Button
+                    variant='destructive'
+                    type="button"
+                    disabled={isSubmitting}
+                    onClick={() => navigate("/sliders")}
+                  >
+                    Cancel
                   </Button>
                 </CardFooter>
               </Card>

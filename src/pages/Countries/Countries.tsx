@@ -28,15 +28,10 @@ export const ActiveStatusCell = ({ isActive }: { isActive: boolean }) => {
 
     return (
         <div className='flex justify-center gap-6 items-center'>
-            <div className='flex justify-center'>
-                <ActiveSwitcher
-                    isChecked={isChecked}
-                    onChange={setIsChecked}
-                />
-            </div>
+
 
             <div className={` ${isChecked? "bg-green-700/80": "bg-red-700/80"} text-white  rounded-2xl`}>
-                <div className={`p-1`} >
+                <div className={`py-1 px-2.5`} >
                     {isChecked ? 'Active' : 'Desactive'}
                 </div>
             </div>
@@ -100,7 +95,7 @@ const Countries = () => {
     return (
         <div className='flex flex-col'>
             <BreadCrumb path='Countries' icon={Flag} />
-            <DataTable columns={columns} data={data} />
+            <DataTable columns={columns} data={data} searchColumnId='name' />
         </div>
     )
 }
