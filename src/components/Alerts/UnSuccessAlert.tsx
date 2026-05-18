@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export const UnSuccessAlert = () => {
+export const UnSuccessAlert = ({title}: {title: string}) => {
     return Swal.mixin({
         toast: true,
         position: "top-end",
@@ -14,6 +14,6 @@ export const UnSuccessAlert = () => {
         }
     }).fire({
         icon: "error",
-        title: "Invalid Sign in",
+        title: title || "Invalid credentials",
     });
 };
