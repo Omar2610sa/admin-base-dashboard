@@ -35,7 +35,7 @@ export default function MediaUpload({
     uploadEndpoint = '/general/attachments',
     disabled = false,
     maxSizeBytes = 50 * 1024 * 1024,
-    model = 'slider',
+    model,
     attachmentType = 'image',
 }: MediaUploadProps) {
     const { values, setFieldValue } = useFormikContext<Record<string, unknown>>();
@@ -114,7 +114,6 @@ export default function MediaUpload({
                     headers: { 'Content-Type': 'multipart/form-data' },
                 });
 
-                // ✅ احفظ الـ response كاملة مش الـ filename بس
                 if (res.data) {
                     const uploadedMedia = res.data?.data || res.data;
                     setFieldValue(name, uploadedMedia);

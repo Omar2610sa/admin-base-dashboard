@@ -24,20 +24,25 @@ import {
 import { DataTablePagination } from "@/components/TablePagination"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
-import { SearchXIcon } from "lucide-react"
+import { PlusCircle, SearchXIcon } from "lucide-react"
 import FiltersBtns from "@/components/FiltersBtns/FiltersBtns"
+import { Button } from "@/components/ui/button"
+import { useNavigate } from "react-router-dom"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
     data: TData[],
     searchColumnId?: string
-
+    nameAdd?: string
+    addPath?: string
 }
 
 export function DataTable<TData, TValue>({
     columns,
     data,
-    searchColumnId
+    searchColumnId,
+    nameAdd,
+    addPath
 }: DataTableProps<TData, TValue>) {
 
     const [sorting, setSorting] = useState<SortingState>([])
@@ -61,14 +66,22 @@ export function DataTable<TData, TValue>({
         },
     })
 
+    const navigate = useNavigate();
     return (
         <div>
+            <div className="flex items-center justify-between">
 
-            {/* Filters */}
-            {searchColumnId && (
-                <FiltersBtns table={table} columnId={searchColumnId} />
-            )}
-
+                {/* Filters */}
+                {searchColumnId && (
+                    <FiltersBtns table={table} columnId={searchColumnId} />
+                )}
+                {/* Add Button */}
+                <Button
+                    onClick={() => addPath && navigate(addPath)}
+                    className="bg-sidebar-accent text-white p-4 ">
+                    <PlusCircle /> Add {nameAdd}
+                </Button>
+            </div>
             <div className="overflow-hidden rounded-md border">
 
 

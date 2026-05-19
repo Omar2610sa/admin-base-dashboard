@@ -16,6 +16,8 @@ import Coupons from '@/pages/Coupons/Coupons';
 import Faqs from '@/pages/Faqs/Faqs';
 import Users from '@/pages/Users/Users';
 import Orders from '@/pages/Orders/Orders';
+import EditCoupons from '@/pages/Coupons/EditCoupons';
+import AddSlider from '@/pages/Sliders/AddSlider';
 
 const RoutePaths = () => {
     return (
@@ -39,13 +41,20 @@ const RoutePaths = () => {
                     <Route path="/" element={<HomePage />} />
 
                     {/* Placeholder routes to keep sidebar navigation functional */}
+                    {/* Sliders */}
                     <Route path="/sliders" element={<Slider />} />
+                    <Route path="/sliders/add" element={<AddSlider />} />
                     <Route path="/sliders/edit/:id" element={<EditSliders />} />
+                    
+                    
                     <Route path="/faqs" element={<Faqs />} />
+
+
                     <Route path="/orders" element={<Orders />} />
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/gifts" element={<Gifts />} />
                     <Route path="/coupons" element={<Coupons />} />
+                    <Route path="/coupons/edit/:id" element={<EditCoupons    />} />
                     <Route path="/applications" element={<HomePage />} />
                     <Route path="/countries" element={<Countries />} />
                     <Route path="/admin-notifications" element={<HomePage />} />

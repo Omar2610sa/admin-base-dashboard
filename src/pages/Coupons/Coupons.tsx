@@ -115,7 +115,7 @@ const Coupons = () => {
         {
             accessorKey: "actions",
             header: "Actions",
-            cell: ({ row }) => <TableActions to={`/sliders/edit/${row.original.id.toString()}`} />
+            cell: ({ row }) => <TableActions to={`/coupons/edit/${row.original.id.toString()}`} />
         }
     ]
 

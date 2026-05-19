@@ -1,7 +1,7 @@
-- [ ] Verify routing provider (BrowserRouter) placement
-- [ ] Mount RoutePaths in App.tsx
-- [ ] Update nav components to use React Router Link/NavLink instead of <a href>
-- [ ] Implement useLocation-based active state for SidebarMenuButton (isActive) without altering styling
-- [ ] Ensure collapsible defaultOpen uses computed active state where applicable
-- [ ] Run typecheck/build/dev validation
+- [ ] Implement `EditCoupons` page mirroring `EditSliders` architecture and UI
+- [ ] Add coupon types, Yup validation schema, and initialValues from fetched coupon data (enableReinitialize)
+- [ ] Wire Formik submit: FormData + `_method=put` + PUT endpoint + Success/UnSuccess alerts + navigate back to `/coupons`
+- [ ] Add MediaUpload field named `image` with initial preview from `image.media` and correct upload behavior
+- [ ] Add required input fields with same grid/spacing as EditSliders (responsive)
+- [ ] Run typecheck and ensure route `/coupons/edit/:id` works
 

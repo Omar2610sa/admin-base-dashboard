@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export const CheckDelete = ({ title }) => {
+export const CheckDelete = ({ title }: { title: string }) => {
     return Swal.fire({
         title: `Delete ${title}?`,
         text: "You won't be able to revert this!",
@@ -10,8 +10,6 @@ export const CheckDelete = ({ title }) => {
         cancelButtonColor: "#6b7280",
         confirmButtonText: "Yes, delete it!",
         cancelButtonText: "Cancel",
-        background: "#0f172a",
-        color: "#f8fafc",
         customClass: {
             popup: 'rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700',
             title: 'text-xl font-black text-slate-800 dark:text-white mb-4',
@@ -21,18 +19,7 @@ export const CheckDelete = ({ title }) => {
         },
         buttonsStyling: false,
         didOpen: () => {
-            // RTL support
-if (document.documentElement.dir === 'rtl') {
-                Swal.getPopup().style.direction = 'rtl';
-                Swal.getPopup().classList.add('text-right');
-            }
-            
-            // Additional dark mode enhancements
-            const popup = Swal.getPopup();
-            popup.classList.add('dark:bg-slate-800', 'dark:border-slate-700');
-            
-            const icon = Swal.getIcon();
-            if (icon) icon.classList.add('dark:text-yellow-400');
+
         }
     });
 }

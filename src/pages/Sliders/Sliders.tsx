@@ -111,7 +111,19 @@ const columns: ColumnDef<Slider>[] = [
     {
         accessorKey: "actions",
         header: "Actions",
-        cell: ({ row }) => <TableActions to={`/sliders/edit/${row.original.id.toString()}`} />
+        cell: ({ row }) => (
+            <TableActions
+                to={`/sliders/edit/${row.original.id.toString()}`}
+                itemId={row.original.id}
+                itemName={row.original.title || "Slider"}
+                endpoint="/dashboard/admin/sliders"
+                onDeleteSuccess={() => {
+                    // Trigger table refresh - depends on your implementation
+                    // e.g., refetch data, invalidate query, etc.
+                    console.log("Slider deleted, refresh table")
+                }}
+            />
+        )
     }
 ]
 
@@ -129,7 +141,11 @@ const Slider = () => {
             {/* App Table */}
             <div>
 
-                <DataTable columns={columns} data={data} searchColumnId="title" />
+                <DataTable columns={columns}
+                    data={data}
+                    searchColumnId="title"
+                    nameAdd="Slider"
+                    addPath="/sliders/add" />
             </div>
 
         </div>
