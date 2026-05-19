@@ -15,7 +15,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Home,  ContactIcon, FormIcon, Flag, Building2Icon, Bell, BellMinus, SettingsIcon, Shield, Users, Sliders, GiftIcon, WalletCardsIcon, BadgeQuestionMark, GpuIcon } from "lucide-react"
+import { Home,  ContactIcon,  Flag, Building2Icon, Bell, BellMinus, SettingsIcon, Shield, Users, Sliders, GiftIcon, WalletCardsIcon, BadgeQuestionMark, GpuIcon, ShoppingBasketIcon } from "lucide-react"
 
 import { Link, useLocation } from "react-router-dom"
 
@@ -34,12 +34,13 @@ const sidebarSections = [
             { name: "FAQ", url: "/Faqs", icon: <BadgeQuestionMark /> },
         ],
     },
-    // {
-    //     label: "Products",
-    //     items: [
-    //         { name: "Products", url: "/products", icon: <GpuIcon /> },
-    //     ],
-    // },
+    {
+        label: "Products",
+        items: [
+            { name: "Products", url: "/products", icon: <GpuIcon /> },
+            { name: "Orders", url: "/orders", icon: <ShoppingBasketIcon /> },
+        ],
+    },
     {
         label: "Earning",
         items: [

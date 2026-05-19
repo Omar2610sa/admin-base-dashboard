@@ -165,10 +165,10 @@ const EditSliders = () => {
       if (values.image) {
         if (typeof values.image === 'object' && !(values.image instanceof File)) {
           const imageData = values.image as Record<string, unknown>;
-          formData.append('image', String(imageData.data || imageData));
+          formData.append('image[media]', String(imageData.data || imageData));
         }
         else if (typeof values.image === 'string') {
-          formData.append('image', values.image);
+          formData.append('image[media]', values.image);
         }
       }
 

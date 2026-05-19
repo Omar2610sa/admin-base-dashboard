@@ -14,7 +14,7 @@ type paths = {
     path: string,
     pathEdit?: string,
     icon: LucideIcon,
-    iconEdit: LucideIcon
+    iconEdit?: LucideIcon
 }
 
 

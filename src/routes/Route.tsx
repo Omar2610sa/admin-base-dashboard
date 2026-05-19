@@ -15,6 +15,7 @@ import Gifts from '@/pages/Gifts/Gifts';
 import Coupons from '@/pages/Coupons/Coupons';
 import Faqs from '@/pages/Faqs/Faqs';
 import Users from '@/pages/Users/Users';
+import Orders from '@/pages/Orders/Orders';
 
 const RoutePaths = () => {
     return (
@@ -41,6 +42,7 @@ const RoutePaths = () => {
                     <Route path="/sliders" element={<Slider />} />
                     <Route path="/sliders/edit/:id" element={<EditSliders />} />
                     <Route path="/faqs" element={<Faqs />} />
+                    <Route path="/orders" element={<Orders />} />
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/gifts" element={<Gifts />} />
                     <Route path="/coupons" element={<Coupons />} />
